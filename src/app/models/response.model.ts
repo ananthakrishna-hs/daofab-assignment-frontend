@@ -19,3 +19,17 @@ export interface IParentsResponse extends IReponseData {
   }
 }
 
+export interface IChildren {
+  id: number;
+  parentId: number;
+  paidAmount: number;
+}
+
+export interface IChildrenResponse extends IReponseData {
+  data: {
+    parent: IParents;
+    size: number;
+    children: IChildren[];
+  }
+}
+

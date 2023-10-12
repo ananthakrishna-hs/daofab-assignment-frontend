@@ -22,7 +22,11 @@
             <td>{{ txn.sender }}</td>
             <td>{{ txn.receiver }}</td>
             <td>{{ txn.totalAmount }}</td>
-            <td>{{ txn.totalPaidAmount }}</td>
+            <td>
+              <a [routerLink]="[txn.id]">
+                {{ txn.totalPaidAmount }}
+              </a>
+            </td>
           </tr>
         </tbody>
         <tfoot>
