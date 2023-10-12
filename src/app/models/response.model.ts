@@ -1,9 +1,15 @@
+/**
+ * @interface Common response structure
+ */
 export interface IReponseData {
   data: any;
   message: string;
   status: boolean;
 }
 
+/**
+ * @interface
+ */
 export interface IParents {
   id: number;
   sender: string;
@@ -12,6 +18,9 @@ export interface IParents {
   totalPaidAmount: number;
 }
 
+/**
+ * @interface Common response structure
+ */
 export interface IParentsResponse extends IReponseData {
   data: {
     size: number;
@@ -19,12 +28,18 @@ export interface IParentsResponse extends IReponseData {
   }
 }
 
+/**
+ * @interface Common response structure
+ */
 export interface IChildren {
   id: number;
   parentId: number;
   paidAmount: number;
 }
 
+/**
+ * @interface Common response structure
+ */
 export interface IChildrenResponse extends IReponseData {
   data: {
     parent: IParents;

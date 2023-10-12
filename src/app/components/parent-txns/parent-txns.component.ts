@@ -18,10 +18,18 @@ export class ParentTxnsComponent implements OnInit {
     private apiService: ApiService
   ) { }
 
+  /**
+   * Fetch parent txns on load
+   */
   ngOnInit(): void {
     this.getParentTxns(2, this.currentPage);
   }
 
+  /**
+   * Fetch paginated parent txns
+   * @param limit Limit per page
+   * @param page Page number
+   */
   getParentTxns(limit: number, page: number): void {
     this.apiService.getAllParents(limit, page).subscribe(response => {
       if (response.status) {
@@ -35,6 +43,9 @@ export class ParentTxnsComponent implements OnInit {
     });
   }
 
+  /**
+   * To change page of table
+   */
   changePage(): void {
     this.getParentTxns(2, this.currentPage);
   }

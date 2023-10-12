@@ -18,6 +18,9 @@ export class ChildTxnsComponent implements OnInit {
     private route: ActivatedRoute
   ) { }
 
+  /**
+   * Fetch child txns on load or throw error if invalid
+   */
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     if (id && !isNaN(Number(id))) {
@@ -27,6 +30,10 @@ export class ChildTxnsComponent implements OnInit {
     }
   }
 
+  /**
+   * Fetch txns by parent ID
+   * @param parentId ID of parent txn
+   */
   getChildTxns(parentId: number): void {
     this.apiService.getChildren(parentId).subscribe(response => {
       if (response.status) {
