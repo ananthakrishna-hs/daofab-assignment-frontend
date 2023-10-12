@@ -25,6 +25,18 @@
             <td>{{ txn.totalPaidAmount }}</td>
           </tr>
         </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="5">
+              <ngb-pagination
+              [collectionSize]="totalTransactions"
+              [(page)]="currentPage"
+              [pageSize]="2"
+              [boundaryLinks]="true"
+              (pageChange)="changePage()"></ngb-pagination>
+            </td>
+          </tr>
+        </tfoot>
       </table>
     </div>
   </div>
